@@ -50,7 +50,7 @@ Example 2:
 ```
 
 This prints the frequency of the FE-5680A device connected to serial port
-```/dev/ttyUSB0```, then sets the frequency to 10.1 MHz, then prints the
+```/dev/ttyUSB0```, sets the frequency to 10,123,000.1 Hz, then prints the
 frequency again.  It will output something like:
 
 ```
