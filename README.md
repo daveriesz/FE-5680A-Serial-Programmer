@@ -1,4 +1,4 @@
-# FE 5680A Serial Programmer
+# FE-5680A Serial Programmer
 
 This is a simple Bash script to manage the frequency of a FE-5680A rubidium
 frequency standard.  It can print the current frequency, set a new frequency,
