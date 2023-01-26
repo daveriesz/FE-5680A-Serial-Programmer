@@ -85,7 +85,9 @@ setfreq()
   fi
   getstatus
 
-  val=$(echo 20k 10i 16o "$1" 2 32 ^ \* $ref / pq | dc - | sed 's/^\([0-9A-F]*\)\.\(........\).*$/\1\2/g')
+  val1=$(echo 20k 10i 16o "$1" 2 32 ^ \* $ref / pq | dc - | sed 's/^\([0-9A-F]*\)\.\(........\).*$/\1/g')
+  val2=$(echo 20k 10i 16o "$1" 2 32 ^ \* $ref / pq | dc - | sed 's/^\([0-9A-F]*\)\.\(........\).*$/\2/g')
+  val=$(printf "%.8x%.8x" "0x$val1" "0x$val2")
   data=$(sendrecv "F=$val")
   if [ "$data" = OK ] ; then
     echo "Set frequency command succeeded."
