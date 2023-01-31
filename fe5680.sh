@@ -35,7 +35,7 @@ sendrecv()
 {
   tempfile=$( mktemp -t fesh.XXXXXXXXXX )
   exec 3<>$serialdev
-  stty -F $serialdev 9600 cs8 -cstopb -parenb #-ocrnl raw -echo
+  stty -F $serialdev 9600 cs8 -cstopb -parenb -brkint -icrnl -imaxbel -opost -isig -icanon -iexten -echo
   
   cat <&3 >"$tempfile" &
   catpid=$!
